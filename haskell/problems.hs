@@ -28,6 +28,9 @@ sumFibb = sum $ filter even $ takeWhile (< 4 * 10^6) [ fibb n | n <- [0..] ]
 
 --Problem 3 - Largest prime factor
 
+isqrt :: Int -> Int
+isqrt = floor . sqrt . fromIntegral
+
 isPrime_ :: Int -> Int -> Bool
 isPrime_ num divisor
     | divisor < 2 = True
@@ -35,7 +38,7 @@ isPrime_ num divisor
     | otherwise = isPrime_ num (pred divisor)
 
 isPrime :: Int -> Bool
-isPrime n = isPrime_ n $ floor $ sqrt (fromIntegral n)
+isPrime n = isPrime_ n (isqrt n)
 
 nextPrime :: Int -> Int
 nextPrime n =
