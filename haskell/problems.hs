@@ -25,3 +25,38 @@ fibb n = fibb (n - 1) + fibb (n - 2)
 -- Sum of all even fibbonacci bellow 4 million
 sumFibb :: Int
 sumFibb = sum $ filter even $ takeWhile (< 4 * 10^6) [ fibb n | n <- [0..] ]
+
+--Problem 3 - Largest prime factor
+
+isPrime_ :: Int -> Int -> Bool
+isPrime_ num divisor
+    | divisor < 2 = True
+    | mod num divisor == 0 = False
+    | otherwise = isPrime_ num (pred divisor)
+
+isPrime :: Int -> Bool
+isPrime n = isPrime_ n $ floor $ sqrt (fromIntegral n)
+
+nextPrime :: Int -> Int
+nextPrime n =
+  if isPrime next then
+    next
+  else
+    nextPrime next
+  where
+    next = succ n
+
+largestPrimeFactor_ :: Int -> Int -> Int
+largestPrimeFactor_ n factor =
+  if modN == 0 then
+    if isPrime n then
+      n
+    else
+      largestPrimeFactor_ quotient factor
+  else
+    largestPrimeFactor_ n (nextPrime factor)
+  where
+    (quotient, modN) = divMod n factor
+
+largestPrimeFactor :: Int -> Int
+largestPrimeFactor n = largestPrimeFactor_ n 2
