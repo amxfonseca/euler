@@ -7,6 +7,7 @@ import qualified Problem2
 import qualified Problem3
 import qualified Problem4
 import qualified Problem5
+import qualified Problem6
 
 answer :: Int -> String -> IO ()
 answer value desc =
@@ -45,3 +46,10 @@ main = do
     \2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.\
     \\n\
     \What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?"
+
+    answer Problem6.answer "\
+    \The sum of the squares of the first ten natural numbers is, 12 + 22 + ... + 102 = 385\n\n\
+    \The square of the sum of the first ten natural numbers is, (1 + 2 + ... + 10)2 = 552 = 3025\n\n\
+    \Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.\
+    \\n\
+    \Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum."
