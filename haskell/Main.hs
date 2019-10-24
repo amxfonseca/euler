@@ -6,11 +6,11 @@ import qualified Problem1
 import qualified Problem2
 import qualified Problem3
 import qualified Problem4
+import qualified Problem5
 
 answer :: Int -> String -> IO ()
 answer value desc =
   printf "\n%s\n\n\x1b[32mAnswer: %d\x1b[39m\n\n" desc value
-
 
 
 main :: IO ()
@@ -40,3 +40,8 @@ main = do
     \The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.\
     \\n\
     \Find the largest palindrome made from the product of two 3-digit numbers."
+
+    answer Problem5.answer "\
+    \2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.\
+    \\n\
+    \What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?"
