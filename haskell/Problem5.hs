@@ -9,4 +9,4 @@ isMultipleOfRange n range =
 
 answer :: Int
 answer =
-  head [ n | n <- [1..], isMultipleOfRange n [1..20]]
+  head [ n | n <- [1..], isMultipleOfRange n $ reverse [2..20]]
