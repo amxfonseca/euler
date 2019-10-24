@@ -1,7 +1,9 @@
-.PHONY: clean all
+.PHONY: clean build
 
-all:
-	ghc -O --make -o euler Main
+all: build
+
+build:
+	ghc -O -o euler Main
 
 clean:
 	-rm -f euler *.hi *.o
