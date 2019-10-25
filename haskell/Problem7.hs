@@ -1,3 +1,4 @@
+-- Problem 7 - 10001st prime
 module Problem7 where
 
 isqrt :: Integral a => a -> Int
