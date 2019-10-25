@@ -8,6 +8,7 @@ import qualified Problem3
 import qualified Problem4
 import qualified Problem5
 import qualified Problem6
+import qualified Problem7
 
 answer :: Int -> String -> IO ()
 answer value desc =
@@ -53,3 +54,8 @@ main = do
     \Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.\
     \\n\
     \Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum."
+
+    answer Problem7.answer "\
+    \By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.\
+    \\n\
+    \What is the 10 001st prime number?"
