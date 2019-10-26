@@ -1,12 +1,20 @@
 -- Problem 5 - Smallest multiple
 module Problem5 where
 
-import Problem1 (isMultipleOf)
+import Problem7 (isPrime)
 
-isMultipleOfRange :: Int -> [Int] -> Bool
-isMultipleOfRange n range =
-  null $ dropWhile id $ flip isMultipleOf n <$> range
+primesLowerThan :: Int -> [Int]
+primesLowerThan n =
+  takeWhile (< n) [ p | p <- [2..], isPrime p]
+
+-- Lowest multiple of a sequence of numbers from {1...K}
+firstMultipleOfK :: Int -> Int
+firstMultipleOfK k =
+  product $ zipWith (^) primes exponents
+  where
+    primes = primesLowerThan k
+    exponents = floor . flip logBase (fromIntegral k) . fromIntegral <$> primes
 
 answer :: Int
 answer =
-  head [ n | n <- [1..], isMultipleOfRange n $ reverse [2..20]]
+  firstMultipleOfK 20
