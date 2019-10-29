@@ -10,6 +10,7 @@ import qualified Problem5
 import qualified Problem6
 import qualified Problem7
 import qualified Problem8
+import qualified Problem9
 
 answer :: Int -> String -> IO ()
 answer value desc =
@@ -87,3 +88,12 @@ main = do
     \\n\n\
     \Find the thirteen adjacent digits in the 1000-digit number \
     \that have the greatest product. What is the value of this product?"
+
+    answer Problem9.answer "\
+    \A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,\
+    \a2 + b2 = c2\
+    \\n\
+    \For example, 32 + 42 = 9 + 16 = 25 = 52.\
+    \\n\
+    \There exists exactly one Pythagorean triplet for which a + b + c = 1000. \
+    \Find the product abc."
