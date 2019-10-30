@@ -11,6 +11,7 @@ import qualified Problem6
 import qualified Problem7
 import qualified Problem8
 import qualified Problem9
+import qualified Problem10
 
 answer :: Int -> String -> IO ()
 answer value desc =
@@ -97,3 +98,8 @@ main = do
     \\n\
     \There exists exactly one Pythagorean triplet for which a + b + c = 1000. \
     \Find the product abc."
+
+    answer Problem10.answer "\
+    \The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.\
+    \\n\
+    \Find the sum of all the primes below two million."
